@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+
+        #map1_container,#map2_container,#map3_container,#map4_container,#map5_container,#map6_container,#map7_container,#map8_container,#map9_container,
+        #map10_container,#map11_container,#map12_container,#map13_container,#map14_container,#map15_container,#map16_container,#map17_container,#map18_container,
+        #map19_container,#map20_container,#map21_container,#map22_container,#map23_container,#map24_container,#map25_container,#map26_container,#map27_container,
+        #map28_container,#map29_container,#map30_container,#map31_container,#map32_container,#map33_container,#map34_container,#map35_container
+        {width:20%;height:14%;float:left;overflow: hidden;margin:0;}
+        #allmap1{margin:3px;height:100%;}
+        #allmap2{margin:3px;height:100%;}
+        #allmap3{margin:3px;height:100%;}
+        #allmap4{margin:3px;height:100%;}
+        #allmap5{margin:3px;height:100%;}
+        #allmap6{margin:3px;height:100%;}
+        #allmap7{margin:3px;height:100%;}
+        #allmap8{margin:3px;height:100%;}
+        #allmap9{margin:3px;height:100%;}
+        #allmap10{margin:3px;height:100%;}
+        #allmap11{margin:3px;height:100%;}
+        #allmap12{margin:3px;height:100%;}
+        #allmap13{margin:3px;height:100%;}
+        #allmap14{margin:3px;height:100%;}
+        #allmap15{margin:3px;height:100%;}
+        #allmap16{margin:3px;height:100%;}
+        #allmap17{margin:3px;height:100%;}
+        #allmap18{margin:3px;height:100%;}
+        #allmap19{margin:3px;height:100%;}
+        #allmap20{margin:3px;height:100%;}
+        #allmap21{margin:3px;height:100%;}
+        #allmap22{margin:3px;height:100%;}
+        #allmap23{margin:3px;height:100%;}
+        #allmap24{margin:3px;height:100%;}
+        #allmap25{margin:3px;height:100%;}
+        #allmap26{margin:3px;height:100%;}
+        #allmap27{margin:3px;height:100%;}
+        #allmap28{margin:3px;height:100%;}
+        #allmap29{margin:3px;height:100%;}
+        #allmap30{margin:3px;height:100%;}
+        #allmap31{margin:3px;height:100%;}
+        #allmap32{margin:3px;height:100%;}
+        #allmap33{margin:3px;height:100%;}
+        #allmap34{margin:3px;height:100%;}
+        #allmap35{margin:3px;height:100%;}
+
+        .anchorBL{display:none;}
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=7ffAk39uXu91fztY3lB3G4v2"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+
+</head>
+<body>
+<div id="map1_container"><div id="allmap1"></div></div>
+<div id="map2_container"><div id="allmap2"></div></div>
+<div id="map3_container"><div id="allmap3"></div></div>
+<div id="map4_container"><div id="allmap4"></div></div>
+<div id="map5_container"><div id="allmap5"></div></div>
+<div id="map6_container"><div id="allmap6"></div></div>
+<div id="map7_container"><div id="allmap7"></div></div>
+<div id="map8_container"><div id="allmap8"></div></div>
+<div id="map9_container"><div id="allmap9"></div></div>
+<div id="map10_container"><div id="allmap10"></div></div>
+<div id="map11_container"><div id="allmap11"></div></div>
+<div id="map12_container"><div id="allmap12"></div></div>
+<div id="map13_container"><div id="allmap13"></div></div>
+<div id="map14_container"><div id="allmap14"></div></div>
+<div id="map15_container"><div id="allmap15"></div></div>
+<div id="map16_container"><div id="allmap16"></div></div>
+<div id="map17_container"><div id="allmap17"></div></div>
+<div id="map18_container"><div id="allmap18"></div></div>
+<div id="map19_container"><div id="allmap19"></div></div>
+<div id="map20_container"><div id="allmap20"></div></div>
+<div id="map21_container"><div id="allmap21"></div></div>
+<div id="map22_container"><div id="allmap22"></div></div>
+<div id="map23_container"><div id="allmap23"></div></div>
+<div id="map24_container"><div id="allmap24"></div></div>
+<div id="map25_container"><div id="allmap25"></div></div>
+<div id="map26_container"><div id="allmap26"></div></div>
+<div id="map27_container"><div id="allmap27"></div></div>
+<div id="map28_container"><div id="allmap28"></div></div>
+<div id="map29_container"><div id="allmap29"></div></div>
+<div id="map30_container"><div id="allmap30"></div></div>
+<div id="map31_container"><div id="allmap31"></div></div>
+<div id="map32_container"><div id="allmap32"></div></div>
+<div id="map33_container"><div id="allmap33"></div></div>
+<div id="map34_container"><div id="allmap34"></div></div>
+<div id="map35_container"><div id="allmap35"></div></div>
+
+</body>
+</html>
+<script type="text/javascript">
+    //四川北路，五角场，豫园，真北路，莲花路
+
+    Actual();
+    Huff();
+    Huff_sub();
+    Huff_ob();
+    Ours();
+    Ours_times();
+    Area();
+
+    // 百度地图API功能
+    function Actual(){
+        map1();
+        map2();
+        map3();
+        map4();
+        map5();
+    }
+    function Huff(){
+        map6();
+        map7();
+        map8();
+        map9();
+        map10();
+    }
+    function Huff_sub(){
+        map11();
+        map12();
+        map13();
+        map14();
+        map15();
+    }
+    function Huff_ob(){
+        map16();
+        map17();
+        map18();
+        map19();
+        map20();
+    }
+    function Ours(){
+        map21();
+        map22();
+        map23();
+        map24();
+        map25();
+    }
+    function Ours_times(){
+        map26();
+        map27();
+        map28();
+        map29();
+        map30();
+    }
+    function Area(){
+        map31();
+        map32();
+        map33();
+        map34();
+        map35();
+    }
+
+
+    function map1(){
+        var map = new BMap.Map("allmap1");
+        var cpoint = new BMap.Point(121.43, 31.24);
+       // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.268704,31.321777,31.165853,31.16976,31.274879,31.328588,31.216465,31.289303,31.2081,31.252076,31.3115296,31.190246,31.199425,31.202264,31.218871,31.196593,31.194331,31.259276,31.280189,31.260867,31.177068,31.302861,31.282182,31.282532,31.263042,31.280092,31.279788,31.253467,31.278788,31.268662,31.288592,31.198834,31.161067,31.215,31.314789,31.295831,31.322757];
+        var lat=[121.494561,121.506815,121.355163,121.364412,121.501481,121.506766,121.475295,121.510039,121.44435,121.484352,121.4860935,121.368146,121.392076,121.435256,121.482939,121.41173,121.379917,121.488675,121.626781,121.50066,121.370378,121.514218,121.50631,121.578907,121.638572,121.602937,121.552655,121.506676,121.528363,121.53244,121.53494,121.404069,121.493463,121.458266,121.531952,121.533141,121.531934];
+        var c=[0.163112,0.156863,0.125,0.117188,0.105572,0.1,0.098886,0.097506,0.097285,0.09434,0.09324,0.090909,0.090698,0.081746,0.080349,0.075368,0.075071,0.075024,0.073826,0.070284,0.069177,0.067633,0.067557,0.066667,0.064725,0.064655,0.06383,0.062802,0.061307,0.059226,0.057206,0.056726,0.056396,0.05386,0.052298,0.05198,0.050481];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.490778,31.257681),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(149,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("四川北路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        //map.addOverlay(label);
+
+
+    }
+    function map2(){
+        var map = new BMap.Map("allmap2");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.282182,31.321777,31.328588,31.199425,31.268704,31.274879,31.216465,31.289303,31.259276,31.199494,31.190246,31.274959,31.243908,31.253467,31.2081,31.252076,31.3115296,31.165853,31.250055,31.263042,31.215,31.302861,31.177068,31.198834];
+        var lat=[121.50631,121.506815,121.506766,121.392076,121.494561,121.501481,121.475295,121.510039,121.488675,121.450338,121.368146,121.518447,121.482449,121.506676,121.44435,121.484352,121.4860935,121.355163,121.498047,121.638572,121.458266,121.514218,121.370378,121.404069];
+        var c=[0.268657,0.176471,0.159091,0.151163,0.146801,0.1261,0.118384,0.099773,0.091168,0.090643,0.08658,0.084875,0.08104,0.067633,0.063348,0.060377,0.058275,0.057143,0.056911,0.055016,0.054458,0.05314,0.052539,0.050243];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.521292,31.303757),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(135,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("五角场", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+       // map.addOverlay(label);
+
+
+    }
+    function map3(){
+        var map = new BMap.Map("allmap3");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.243908,31.165853,31.2081,31.185411,31.282532,31.252076,31.216465,31.3115296,31.196593,31.194331,31.16976,31.279821,31.170688,31.268704,31.199425,31.190246,31.202264,31.328588,31.289303,31.2665974,31.119074,31.253467,31.280092,31.280189,31.321777,31.312317,31.198834,31.061409,31.259276,31.159847,31.268662,31.274879,31.263042,31.177068,31.178513,31.290668,31.218871,31.2853,31.161067,31.17277094,31.215,31.1871549,31.282182,31.04400487,31.182128,31.250055,31.241817,31.141357,31.073417,31.279788,31.257938,31.28068,31.275209,31.148763,31.197448,31.199494,31.345148];
+        var lat=[121.482449,121.355163,121.44435,121.493625,121.578907,121.484352,121.475295,121.4860935,121.41173,121.379917,121.364412,121.615512,121.496236,121.494561,121.392076,121.368146,121.435256,121.506766,121.510039,121.5281962,121.497813,121.506676,121.602937,121.626781,121.506815,121.589407,121.404069,121.512228,121.488675,121.459763,121.53244,121.501481,121.638572,121.370378,121.494612,121.588847,121.482939,121.562,121.493463,121.452974,121.458266,121.6995211,121.50631,121.4127881,121.500375,121.498047,121.411453,121.489643,121.51059,121.552655,121.513088,121.588448,121.544688,121.495316,121.420773,121.450338,121.500416];
+        var c=[0.204128,0.198214,0.174208,0.171569,0.166667,0.158491,0.157382,0.156177,0.145221,0.144476,0.132813,0.129032,0.128796,0.114178,0.113953,0.112554,0.105556,0.104545,0.103175,0.101064,0.099369,0.096618,0.094828,0.09396,0.088235,0.086957,0.084279,0.083871,0.081671,0.080645,0.077449,0.077224,0.074434,0.074431,0.07398,0.072626,0.072489,0.071429,0.070151,0.069444,0.068023,0.066829,0.063629,0.063584,0.061017,0.060976,0.059701,0.058957,0.057927,0.055319,0.054979,0.054348,0.052486,0.052209,0.051887,0.05117,0.050279];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.493987,31.233805),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(135,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("豫园", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        //map.addOverlay(label);
+
+
+    }
+    function map4(){
+        var map = new BMap.Map("allmap4");
+        var cpoint = new BMap.Point(121.5, 31.2);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.241026,31.24115,31.242542,31.234366,31.231776,31.237625,31.230508,31.288975,31.16976,31.29332,31.364179];
+        var lat=[121.319127,121.335138,121.355194,121.430522,121.394894,121.367275,121.423568,121.150348,121.364412,121.416548,121.355837];
+        var c=[0.222471,0.183051,0.148305,0.128964,0.116822,0.113022,0.072222,0.061224,0.054688,0.049587,0.044643];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.387112,31.238112),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(149,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("真北路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+       // map.addOverlay(label);
+
+
+    }
+    function map5(){
+        var map = new BMap.Map("allmap5");
+        var cpoint = new BMap.Point(121.43, 31.16);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.204574,31.213524,31.2385537,31.215,31.182781,31.222729,31.292593,31.089321,31.24162,31.007379,31.00356,31.190815,31.293554,31.168237,31.045067,31.331838,31.2853,31.194004,31.098205,31.026424,31.011227,31.066987,31.018222,31.208594,31.25876,31.182781,31.39225,31.233884,31.232711,31.279934,31.0107213,31.121008,31.24969,31.199195,31.305002,31.250837,31.154527,31.250055,31.209588];
+        var lat=[121.446457,121.449141,121.4688241,121.458266,121.437277,121.473292,121.45024,121.390356,121.458321,121.395255,121.380805,121.45487,121.200384,121.434977,121.410088,121.226061,121.562,121.463316,121.385783,121.416578,121.410166,121.401878,121.41986,121.499576,121.45922,121.437277,121.42466,121.442527,121.475755,121.452017,121.4082187,121.393101,121.458216,121.474985,121.531974,121.407194,121.430133,121.498047,121.417066];
+        var c=[0.249639,0.206464,0.19268,0.183523,0.181863,0.18174,0.176374,0.175476,0.154889,0.154514,0.15311,0.152159,0.151515,0.147613,0.147264,0.146853,0.142857,0.142857,0.141509,0.14006,0.13895,0.135889,0.129669,0.129482,0.129159,0.128159,0.124077,0.12274,0.121869,0.117108,0.116279,0.114859,0.114783,0.114087,0.111111,0.108225,0.106511,0.105691,0.104801];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.409221,31.136683),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(145,-144)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("莲花路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+       // map.addOverlay(label);
+
+
+    }
+
+    function map6(){
+        var map = new BMap.Map("allmap6");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.259276,31.243908,31.268704,31.250055,31.274879,31.260867,31.253467,31.199494,31.282182];
+        var lat=[121.488675,121.482449,121.494561,121.498047,121.501481,121.50066,121.506676,121.450338,121.50631];
+        var c=[0.048470883,0.045958762,0.039873483,0.029089499,0.029021867,0.027426753,0.026937051,0.025396632,0.0253537];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*120})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.490778,31.257681),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(149,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("四川北路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+       // map.addOverlay(label);
+
+
+    }
+    function map7(){
+        var map = new BMap.Map("allmap7");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.190246,31.289303,31.321777,31.282182,31.328588,31.274879,31.202264,31.199494,31.268704,31.274959,31.278788,31.27652,31.288592,31.259276,31.305002,31.289552,31.358022,31.260867,31.243908,31.263523,31.295831,31.257938,31.33205,31.250055,31.312317,31.290668,31.3215893,31.34784,31.353015,31.251571,31.279788,31.253467,31.282532,31.279821,31.251923,31.408164,31.407856,31.268662,31.319859,31.253228,31.314789,31.263042,31.2853,31.275209,31.280092,31.395315,31.40407985,31.371082,31.28068,31.2665974,31.259783,31.280189,31.345148,31.305516,31.318958,31.281251,31.213858,31.302589,31.240013,31.381402,31.263501,31.335441,31.272073,31.199444,31.364179,31.242307];
+        var lat=[121.368146,121.510039,121.506815,121.50631,121.506766,121.501481,121.435256,121.450338,121.494561,121.518447,121.528363,121.49071,121.53494,121.488675,121.531974,121.483224,121.498709,121.50066,121.482449,121.468783,121.533141,121.513088,121.491556,121.498047,121.589407,121.588847,121.6019475,121.586914,121.57484,121.476368,121.552655,121.506676,121.578907,121.615512,121.517216,121.461219,121.439823,121.53244,121.48496,121.469026,121.531952,121.638572,121.562,121.544688,121.602937,121.479583,121.4760264,121.492828,121.588448,121.5281962,121.480245,121.626781,121.500416,121.485078,121.447096,121.48249,121.673735,121.589314,121.519379,121.488177,121.586689,121.593981,121.587956,121.755374,121.355837,121.471543];
+        var c=[0.37618628,0.374701635,0.321148737,0.299081024,0.279120754,0.208628862,0.19941157,0.19145549,0.189236256,0.170537475,0.167135879,0.16622768,0.165494454,0.146490392,0.127274628,0.122937551,0.119989163,0.11709659,0.111674794,0.110285386,0.108378517,0.10779038,0.107503767,0.106337777,0.106299469,0.105989404,0.10371411,0.103151405,0.103011045,0.10256139,0.101523624,0.101019434,0.10086538,0.100466233,0.100347519,0.10034592,0.098964118,0.097364857,0.097288572,0.09671409,0.095704189,0.095601254,0.095486394,0.095395241,0.094862552,0.094517719,0.093792031,0.093758682,0.093151716,0.093140692,0.092690776,0.092373333,0.09159942,0.091067993,0.090125269,0.089614042,0.089489407,0.088610278,0.088570831,0.087756179,0.08677271,0.085831556,0.08582992,0.084391558,0.083450698,0.08112908];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.521292,31.303757),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(135,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("五角场", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        //map.addOverlay(label);
+
+
+    }
+    function map8(){
+        var map = new BMap.Map("allmap8");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.218871,31.216465,31.243908,31.227182,31.211772,31.259276,31.201963,31.250055,31.199425,31.215,31.253467,31.268704,31.185411,31.178513,31.170688,31.2665974,31.260867,31.268662,31.275209,31.279788];
+        var lat=[121.482939,121.475295,121.482449,121.479326,121.486108,121.488675,121.489561,121.498047,121.392076,121.458266,121.506676,121.494561,121.493625,121.494612,121.496236,121.5281962,121.50066,121.53244,121.544688,121.552655];
+        var c=[0.090332101,0.078682356,0.078340138,0.056871335,0.056650888,0.052380285,0.05121255,0.050521731,0.048857988,0.048710919,0.047604999,0.047232983,0.044632435,0.04393783,0.043559147,0.042940343,0.042169421,0.04203019,0.041420461,0.040017953];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.493987,31.233805),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(135,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("豫园", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        //map.addOverlay(label);
+
+
+    }
+    function map9(){
+        var map = new BMap.Map("allmap9");
+        var cpoint = new BMap.Point(121.5, 31.2);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.237625,31.242542,31.231776,31.24115,31.241026,31.234366,31.230508,31.26301,31.250837,31.281603];
+        var lat=[121.367275,121.355194,121.394894,121.335138,121.319127,121.430522,121.423568,121.400266,121.407194,121.349623];
+        var c=[0.142351789,0.120851583,0.113183483,0.0971975,0.088202872,0.05310552,0.049804998,0.04215358,0.04129881,0.040044811];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.387112,31.238112),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(149,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("真北路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        //map.addOverlay(label);
+
+
+    }
+    function map10(){
+        var map = new BMap.Map("allmap10");
+        var cpoint = new BMap.Point(121.43, 31.16);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.121008,31.141964,31.154527,31.098205,31.08932];
+        var lat=[121.393101,121.413958,121.430133,121.385783,121.39035];
+        var c=[0.105564939,0.099248186,0.043778042,0.042555322,0.04063018];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.409221,31.136683),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(145,-144)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("莲花路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+       // map.addOverlay(label);
+
+
+    }
+
+    function map11(){
+        var map = new BMap.Map("allmap11");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.259276,31.243908,31.268704];
+        var lat=[121.488675,121.482449,121.494561];
+        var c=[0.048470883,0.045958762,0.039873483];
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*120})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.490778,31.257681),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(149,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("四川北路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        //map.addOverlay(label);
+
+
+    }
+    function map12(){
+        var map = new BMap.Map("allmap12");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.190246,31.289303,31.321777,31.282182,31.328588,31.274879,31.202264,31.199494,31.268704,31.274959,31.278788,31.27652,31.288592,31.259276,31.305002,31.289552,31.358022,31.260867,31.243908,31.263523,31.257938,31.33205,31.295831,31.250055,31.312317,31.290668,31.251571,31.3215893,31.253467,31.34784,31.279788,31.353015,31.408164,31.282532,31.279821,31.251923,31.407856,31.319859,31.268662,31.314789,31.263042,31.275209,31.395315,31.2853,31.259783,31.280092,31.253228,31.371082,31.40407985,31.2665974,31.28068,31.345148,31.305516,31.280189,31.281251];
+        var lat=[121.368146,121.510039,121.506815,121.50631,121.506766,121.501481,121.435256,121.450338,121.494561,121.518447,121.528363,121.49071,121.53494,121.488675,121.531974,121.483224,121.498709,121.50066,121.482449,121.468783,121.513088,121.491556,121.533141,121.498047,121.589407,121.588847,121.476368,121.6019475,121.506676,121.586914,121.552655,121.57484,121.461219,121.578907,121.615512,121.517216,121.439823,121.48496,121.53244,121.531952,121.638572,121.544688,121.479583,121.562,121.480245,121.602937,121.469026,121.492828,121.4760264,121.5281962,121.588448,121.500416,121.485078,121.626781,121.48249];
+        var c=[0.501094222,0.498557864,0.425914328,0.399654884,0.367742277,0.271488286,0.256632612,0.245494732,0.244779933,0.214565932,0.209546851,0.207707435,0.206992766,0.184626805,0.152312506,0.149098836,0.144688674,0.14141796,0.133065704,0.127045672,0.12669737,0.126567512,0.126174262,0.123552303,0.121849026,0.121181606,0.120207328,0.118250327,0.117202713,0.117150483,0.117024436,0.116864931,0.116017168,0.115511335,0.115452116,0.115266855,0.113996461,0.11250276,0.111708221,0.108789758,0.108778769,0.108739358,0.108278479,0.108277303,0.108062573,0.107819154,0.107260467,0.106822554,0.106737526,0.106004998,0.104856551,0.10434478,0.104265243,0.104114599,0.10238753];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*70})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.521292,31.303757),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(135,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("五角场", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+       // map.addOverlay(label);
+
+
+    }
+    function map13(){
+        var map = new BMap.Map("allmap13");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.218871,31.243908,31.216465,31.227182,31.211772,31.259276,31.201963,31.250055,31.253467,31.268704,31.199425,31.215,31.185411,31.178513];
+        var lat=[121.482939,121.482449,121.475295,121.479326,121.486108,121.488675,121.489561,121.498047,121.506676,121.494561,121.392076,121.458266,121.493625,121.494612];
+        var c=[0.072378094,0.061745573,0.059614602,0.040498049,0.040131427,0.038161892,0.03601925,0.035917351,0.033739567,0.032867731,0.03239495,0.03069867,0.030686894,0.030076498];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.493987,31.233805),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(135,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("豫园", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        //map.addOverlay(label);
+
+
+    }
+    function map14(){
+        var map = new BMap.Map("allmap14");
+        var cpoint = new BMap.Point(121.5, 31.2);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.237625,31.242542,31.231776,31.24115,31.241026,31.234366,31.230508];
+        var lat=[121.367275,121.355194,121.394894,121.335138,121.319127,121.430522,121.423568];
+        var c=[0.11491591,0.098712929,0.093791639,0.080935962,0.07404535,0.047522209,0.044553397];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*120})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.387112,31.238112),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(149,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("真北路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        //map.addOverlay(label);
+
+
+    }
+    function map15(){
+        var map = new BMap.Map("allmap15");
+        var cpoint = new BMap.Point(121.43, 31.16);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.121008,31.141964,31.098205,31.154527,31.089321,31.066987];
+        var lat=[121.393101,121.413958,121.385783,121.430133,121.390356,121.401878];
+        var c=[0.077014623,0.071386965,0.033967536,0.033884587,0.032442874,0.030222384];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*120})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.409221,31.136683),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(145,-144)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("莲花路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        //map.addOverlay(label);
+
+
+    }
+
+    function map16(){
+        var map = new BMap.Map("allmap16");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.259276,31.243908,31.268704,31.274879,31.282182,31.250055,31.199494,31.260867,31.253467,31.289303,31.274959,31.202264,31.278788,31.27652,31.259783,31.288592,31.295831,31.2665974,31.257938,31.268662,31.218871,31.190246,31.216465,31.251923,31.314789,31.305002,31.322757,31.328588,31.321777,31.242307,31.275209,31.2385537,31.279788,31.240013];
+        var lat=[121.488675,121.482449,121.494561,121.501481,121.50631,121.498047,121.450338,121.50066,121.506676,121.510039,121.518447,121.435256,121.528363,121.49071,121.480245,121.53494,121.533141,121.5281962,121.513088,121.53244,121.482939,121.368146,121.475295,121.517216,121.531952,121.531974,121.531934,121.506766,121.506815,121.471543,121.544688,121.4688241,121.552655,121.519379];
+        var c=[0.033835852,0.033699771,0.033208065,0.032080591,0.031772615,0.031718158,0.03148128,0.031457718,0.031388059,0.031306884,0.031272911,0.031144744,0.031096291,0.031049737,0.030995394,0.030844733,0.030712263,0.030661101,0.030648677,0.030594931,0.030580751,0.030568476,0.030549226,0.030526175,0.030506688,0.03049758,0.030419302,0.030403106,0.030348504,0.03032822,0.030316602,0.030264799,0.030093678,0.030044819];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.490778,31.257681),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(149,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("四川北路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        //map.addOverlay(label);
+
+
+    }
+    function map17(){
+        var map = new BMap.Map("allmap17");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.289303,31.190246,31.321777,31.282182,31.328588,31.274879,31.202264,31.199494,31.268704,31.27652,31.274959,31.278788,31.288592,31.259276,31.289552,31.305002,31.358022,31.260867,31.243908,31.263523,31.257938,31.33205,31.251571,31.295831,31.250055,31.312317,31.290668,31.253467,31.251923,31.259783,31.3215893,31.279788,31.34784,31.408164];
+        var lat=[121.510039,121.368146,121.506815,121.50631,121.506766,121.501481,121.435256,121.450338,121.494561,121.49071,121.518447,121.528363,121.53494,121.488675,121.483224,121.531974,121.498709,121.50066,121.482449,121.468783,121.513088,121.491556,121.476368,121.533141,121.498047,121.589407,121.588847,121.506676,121.517216,121.480245,121.6019475,121.552655,121.586914,121.461219];
+        var c=[0.190682824,0.190226247,0.174167136,0.170434788,0.162161098,0.145065252,0.139574707,0.138529103,0.138373042,0.13188542,0.130646056,0.129154642,0.128173844,0.124217491,0.115117911,0.113937132,0.111899048,0.111677862,0.110995305,0.109900149,0.107089772,0.107047727,0.106618557,0.106566437,0.106035176,0.104669375,0.104505739,0.104015036,0.103635699,0.103576779,0.10345155,0.103412938,0.103074139,0.103038242];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.521292,31.303757),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(135,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("五角场", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+       // map.addOverlay(label);
+
+
+    }
+    function map18(){
+        var map = new BMap.Map("allmap18");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.218871,31.216465,31.243908,31.211772,31.227182,31.259276,31.215,31.201963,31.199425,31.250055,31.268704,31.253467,31.185411,31.178513,31.274879,31.170688,31.282182,31.20952,31.2665974,31.260867,31.199494,31.268662,31.274959,31.275209,31.202264,31.278788,31.289303,31.161067,31.295831,31.279788,31.208594,31.242307,31.21698192,31.322757,31.288592,31.187573,31.204574,31.209798,31.177068,31.253228,31.257938,31.199195,31.198834,31.305002,31.314789];
+        var lat=[121.482939,121.475295,121.482449,121.486108,121.479326,121.488675,121.458266,121.489561,121.392076,121.498047,121.494561,121.506676,121.493625,121.494612,121.501481,121.496236,121.50631,121.477256,121.5281962,121.50066,121.450338,121.53244,121.518447,121.544688,121.435256,121.528363,121.510039,121.493463,121.533141,121.552655,121.499576,121.471543,121.4985641,121.531934,121.53494,121.525106,121.446457,121.518625,121.370378,121.469026,121.513088,121.474985,121.404069,121.531974,121.531952];
+        var c=[0.047993969,0.047327881,0.047316842,0.045470227,0.045428634,0.04497948,0.044931099,0.044696757,0.044687158,0.044634623,0.044633999,0.04426247,0.043930241,0.043853636,0.04379613,0.043793705,0.043743585,0.043730731,0.043693822,0.043625547,0.043571372,0.043568807,0.043501344,0.043486363,0.043459881,0.043442164,0.043421814,0.043413483,0.043358613,0.043310877,0.043242663,0.043235622,0.043232711,0.043192078,0.043173723,0.043133929,0.043130787,0.043104192,0.043098986,0.043079138,0.043073217,0.043062199,0.043057532,0.043025635,0.043010175];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.493987,31.233805),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(135,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("豫园", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        //map.addOverlay(label);
+
+
+    }
+    function map19(){
+        var map = new BMap.Map("allmap19");
+        var cpoint = new BMap.Point(121.5, 31.2);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.237625,31.242542,31.231776,31.24115,31.241026];
+        var lat=[121.367275,121.355194,121.394894,121.335138,121.319127];
+        var c=[0.054946448,0.053776781,0.053684068,0.052117914,0.051511531];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.387112,31.238112),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(149,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("真北路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+       // map.addOverlay(label);
+
+
+    }
+    function map20(){
+        var map = new BMap.Map("allmap20");
+        var cpoint = new BMap.Point(121.43, 31.16);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.121008,31.141964,31.098205,31.154527,31.089321,31.066987,31.168237,31.045067,31.026424,31.018222,31.011227,31.007379,31.157925,31.0107213,31.00356,31.182781,31.169461,31.182781,31.176736,31.204574,31.194004,31.190815,31.199195,30.985223,31.175341,31.213524,31.054089,31.146453,31.159847,31.001529,31.084489,31.16976,31.215,31.015566,31.104467,31.03031,31.208594,31.16659024,31.179223,31.118319,31.222729,31.150836,31.143227,31.357568,31.165853,31.073417,31.17277094,31.084206,31.096245,30.907268,31.306604];
+        var lat=[121.393101,121.413958,121.385783,121.430133,121.390356,121.401878,121.434977,121.410088,121.416578,121.41986,121.410166,121.395255,121.443197,121.4082187,121.380805,121.437277,121.444389,121.437277,121.438365,121.446457,121.463316,121.45487,121.474985,121.231067,121.41823,121.449141,121.232617,121.522975,121.459763,121.229351,121.230473,121.364412,121.458266,121.230488,121.229721,121.230739,121.499576,121.45863,121.441639,121.26045,121.473292,121.538879,121.511519,121.362402,121.355163,121.51059,121.452974,121.509273,121.506388,121.929559,121.448642];
+        var c=[0.042853311,0.042116129,0.038180213,0.038057087,0.037840692,0.037264975,0.036911007,0.036893247,0.036538096,0.036397843,0.036219061,0.035965984,0.035931162,0.035824693,0.035812012,0.035298125,0.035000723,0.034292264,0.034071843,0.034053258,0.033744455,0.033663824,0.033494477,0.033458902,0.033384222,0.033302965,0.033288006,0.033238871,0.033235576,0.03323511,0.033227596,0.033220672,0.033218896,0.033210071,0.033183439,0.033142828,0.03313689,0.033108526,0.033106957,0.033089513,0.033087734,0.033063148,0.033059361,0.033043851,0.033037631,0.033028752,0.033020092,0.033014551,0.033013506,0.033011024,0.033004148];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.409221,31.136683),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(145,-144)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("莲花路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+       // map.addOverlay(label);
+
+
+    }
+
+    function map21(){
+        var map = new BMap.Map("allmap21");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.268704,31.321777,31.165853,31.274879,31.216465,31.328588,31.2081,31.16976,31.289303,31.252076,31.202264,31.259276,31.3115296,31.194331,31.199425,31.280189,31.196593,31.190246,31.282182,31.263042,31.282532,31.268662,31.218871,31.260867,31.279788,31.161067,31.253467,31.198834,31.215];
+        var lat=[121.494561,121.506815,121.355163,121.501481,121.475295,121.506766,121.44435,121.364412,121.510039,121.484352,121.435256,121.488675,121.4860935,121.379917,121.392076,121.626781,121.41173,121.368146,121.50631,121.638572,121.578907,121.53244,121.482939,121.50066,121.552655,121.493463,121.506676,121.404069,121.458266];
+        var c=[0.158815538,0.153329157,0.116946712,0.113706151,0.113514709,0.110372192,0.109069624,0.101394269,0.096768412,0.092823684,0.08996705,0.08926745,0.088891279,0.087380975,0.086844816,0.085941466,0.084650259,0.079700263,0.076678078,0.070469685,0.070039581,0.066060053,0.06435743,0.064132877,0.06232313,0.062016589,0.061172413,0.061114665,0.060173361];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.490778,31.257681),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(149,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("四川北路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        map.addOverlay(label);
+
+
+    }
+    function map22(){
+        var map = new BMap.Map("allmap22");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.282182,31.268704,31.199425,31.328588,31.321777,31.216465,31.274879,31.289303,31.259276,31.274959,31.190246,31.243908,31.199494,31.253467,31.252076,31.2081,31.198834,31.215,31.165853,31.250055,31.263042,31.253228,31.242307,31.3115296];
+        var lat=[121.50631,121.494561,121.392076,121.506766,121.506815,121.475295,121.501481,121.510039,121.488675,121.518447,121.368146,121.482449,121.450338,121.506676,121.484352,121.44435,121.404069,121.458266,121.355163,121.498047,121.638572,121.469026,121.471543,121.4860935];
+        var c=[0.272215057,0.17347701,0.159867555,0.158848864,0.145546314,0.115726506,0.115525505,0.108543716,0.094012064,0.093024731,0.08249085,0.078165401,0.07669979,0.067035592,0.064557923,0.062310901,0.05923554,0.058596547,0.055788117,0.053877607,0.053067663,0.05237548,0.051659656,0.051582344];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*60})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.521292,31.303757),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(135,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("五角场", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        map.addOverlay(label);
+
+
+    }
+    function map23(){
+        var map = new BMap.Map("allmap23");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.2081,31.243908,31.185411,31.165853,31.196593,31.3115296,31.282532,31.170688,31.252076,31.216465,31.16976,31.194331,31.202264,31.253467,31.199425,31.279821,31.268704,31.280189,31.289303,31.328588,31.321777,31.159847,31.198834,31.280092,31.119074,31.190246,31.268662,31.177068,31.2665974,31.263042,31.312317,31.2853,31.061409,31.282182,31.182128,31.04400487,31.259276,31.215,31.218871,31.073417,31.241817,31.274879,31.141357,31.161067,31.257938,31.1871549,31.290668,31.178513,31.279788,31.17277094,31.391511,31.201963,31.250055];
+        var lat=[121.44435,121.482449,121.493625,121.355163,121.41173,121.4860935,121.578907,121.496236,121.484352,121.475295,121.364412,121.379917,121.435256,121.506676,121.392076,121.615512,121.494561,121.626781,121.510039,121.506766,121.506815,121.459763,121.404069,121.602937,121.497813,121.368146,121.53244,121.370378,121.5281962,121.638572,121.589407,121.562,121.512228,121.50631,121.500375,121.4127881,121.488675,121.458266,121.482939,121.51059,121.411453,121.501481,121.489643,121.493463,121.513088,121.6995211,121.588847,121.494612,121.552655,121.452974,121.237326,121.489561,121.498047];
+        var c=[0.207235236,0.196344691,0.184938991,0.16428592,0.164211414,0.156410372,0.152976141,0.140498242,0.138291417,0.137385556,0.136927799,0.123687977,0.115260436,0.115017213,0.113655152,0.113463334,0.112979911,0.110723933,0.102815393,0.100259715,0.099718851,0.096698094,0.096471828,0.095843822,0.094241523,0.093872865,0.090452165,0.087959794,0.083341526,0.083128035,0.08226746,0.0810088,0.073774707,0.072489365,0.072135536,0.071806235,0.071227741,0.070207594,0.070147942,0.068435683,0.068429074,0.068041808,0.06575653,0.064830779,0.064668662,0.064646353,0.063251046,0.061432268,0.059787478,0.057090115,0.055006053,0.053761681,0.050304036];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*60})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.493987,31.233805),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(135,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("豫园", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        map.addOverlay(label);
+
+
+    }
+    function map24(){
+        var map = new BMap.Map("allmap24");
+        var cpoint = new BMap.Point(121.5, 31.2);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.241026,31.24115,31.242542,31.234366,31.231776,31.237625,31.16976,31.230508,31.288975,31.364179,31.289552,31.29332,31.182128,31.331838,31.256222,31.251571,31.150836,31.153366,31.16659024,31.33205,31.143227,31.281251,31.303864,31.176736,31.04400487,31.158171,31.407856,31.371082,31.251923,31.345188,31.284942,31.24969,30.907268,31.287782];
+        var lat=[121.319127,121.335138,121.355194,121.430522,121.394894,121.367275,121.364412,121.423568,121.150348,121.355837,121.483224,121.416548,121.500375,121.226061,121.421793,121.476368,121.538879,121.480304,121.45863,121.491556,121.511519,121.48249,121.413694,121.438365,121.4127881,121.571097,121.439823,121.492828,121.517216,121.245421,121.421493,121.458216,121.929559,121.163264];
+        var c=[0.265208005,0.18500062,0.140032055,0.131064386,0.125210951,0.116018874,0.064758508,0.059389286,0.056078834,0.045834949,0.043674773,0.043413315,0.042055972,0.039495124,0.039227831,0.039079297,0.038648422,0.037317963,0.037200445,0.036142336,0.034881539,0.034724589,0.034564866,0.034395185,0.033695687,0.032643561,0.032353666,0.031989549,0.031880289,0.031173087,0.03088205,0.03066411,0.030452794,0.030390826];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*120})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.387112,31.238112),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(149,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("真北路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        map.addOverlay(label);
+
+
+    }
+    function map25(){
+        var map = new BMap.Map("allmap25");
+        var cpoint = new BMap.Point(121.43, 31.16);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.204574,31.182781,31.222729,31.213524,31.292593,31.00356,31.2385537,31.24162,31.293554,31.007379,31.098205,31.026424,31.215,31.2853,31.331838,31.168237,31.089321,31.25876,31.190815,31.045067,31.011227,31.0107213,31.121008,31.39225,31.279934,31.232711,31.233884,31.194004,31.154527,31.199195,31.209588,31.066987];
+        var lat=[121.446457,121.437277,121.473292,121.449141,121.45024,121.380805,121.4688241,121.458321,121.200384,121.395255,121.385783,121.416578,121.458266,121.562,121.226061,121.434977,121.390356,121.45922,121.45487,121.410088,121.410166,121.4082187,121.393101,121.42466,121.452017,121.475755,121.442527,121.463316,121.430133,121.474985,121.417066,121.401878];
+        var c=[0.237027726,0.216244511,0.208691687,0.206670089,0.204908437,0.183399462,0.181976885,0.172155156,0.17189666,0.164396237,0.156599937,0.154957641,0.154827581,0.15450344,0.150025325,0.148787299,0.146555791,0.145970178,0.135141153,0.134707013,0.133221784,0.131653366,0.130752777,0.130390224,0.127493825,0.12635601,0.12548188,0.124040396,0.123559514,0.123365046,0.117830786,0.11711197,0.113759642,0.112411853,0.111949002,0.107608135,0.103624853,0.10030917,0.100155744];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*60})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.409221,31.136683),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(145,-144)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("莲花路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        map.addOverlay(label);
+
+
+    }
+
+    function map26(){
+        var map = new BMap.Map("allmap26");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.268704,31.16976,31.328588,31.321777,31.165853,31.199425,31.289303,31.274879,31.216465,31.3115296,31.2081,31.280189,31.263042,31.282532,31.252076,31.161067,31.278788,31.190246,31.177068,31.288592,31.253467,31.198834,31.282182,31.202264,31.279788,31.295831,31.305002,31.280092,31.322757,31.218871,31.302861,31.196593,31.293554,31.27652,31.259276,31.061409,31.194331,31.2665974,31.260867];
+        var lat=[121.494561,121.364412,121.506766,121.506815,121.355163,121.392076,121.510039,121.501481,121.475295,121.4860935,121.44435,121.626781,121.638572,121.578907,121.484352,121.493463,121.528363,121.368146,121.370378,121.53494,121.506676,121.404069,121.50631,121.435256,121.552655,121.533141,121.531974,121.602937,121.531934,121.482939,121.514218,121.41173,121.200384,121.49071,121.488675,121.512228,121.379917,121.5281962,121.50066];
+        var c=[0.170141795,0.131785141,0.125304432,0.119764979,0.115031742,0.094550919,0.090816052,0.085578552,0.084900485,0.08308416,0.074914516,0.074382503,0.074309184,0.073097369,0.071384499,0.071053428,0.070524839,0.069401713,0.068498701,0.067768132,0.063778561,0.063614591,0.063554472,0.062684236,0.062636552,0.062504168,0.060020375,0.059954481,0.059942912,0.059801203,0.058963952,0.058849403,0.056875089,0.056416129,0.056229895,0.054632021,0.05459214,0.054484938,0.051568627];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*120})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.490778,31.257681),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(149,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("四川北路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        map.addOverlay(label);
+
+
+    }
+    function map27(){
+        var map = new BMap.Map("allmap27");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.282182,31.328588,31.321777,31.274879,31.199425,31.268704,31.274959,31.216465,31.243908,31.259276,31.253467,31.190246,31.289303,31.199494,31.2081,31.252076,31.3115296,31.198834,31.263042,31.177068,31.07763,31.19395,31.218871,30.95929];
+        var lat=[121.50631,121.506766,121.506815,121.501481,121.392076,121.494561,121.518447,121.475295,121.482449,121.488675,121.506676,121.368146,121.510039,121.450338,121.44435,121.484352,121.4860935,121.404069,121.638572,121.370378,121.611235,121.32155,121.482939,121.850535];
+        var c=[0.26927889,0.179823994,0.130108627,0.127614286,0.124990793,0.115251181,0.098057472,0.094507959,0.092495138,0.091717242,0.08440705,0.0801119,0.075525334,0.073446308,0.068580816,0.067574231,0.067426746,0.064339167,0.060086048,0.058351202,0.058132254,0.056796566,0.052834081,0.051765205];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*120})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.521292,31.303757),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(135,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("五角场", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        map.addOverlay(label);
+
+
+    }
+    function map28(){
+        var map = new BMap.Map("allmap28");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.243908,31.252076,31.282532,31.2081,31.199425,31.16976,31.165853,31.279821,31.216465,31.328588,31.185411,31.170688,31.196593,31.3115296,31.194331,31.202264,31.321777,31.190246,31.280189,31.198834,31.289303,31.268704,31.218871,31.119074,31.159847,31.263042,31.215,31.17277094,31.2853,31.161067,31.177068,31.259276,31.312317,31.2665974,31.280092];
+        var lat=[121.482449,121.484352,121.578907,121.44435,121.392076,121.364412,121.355163,121.615512,121.475295,121.506766,121.493625,121.496236,121.41173,121.4860935,121.379917,121.435256,121.506815,121.368146,121.626781,121.404069,121.510039,121.494561,121.482939,121.497813,121.459763,121.638572,121.458266,121.452974,121.562,121.493463,121.370378,121.488675,121.589407,121.5281962,121.602937];
+        var c=[0.243438946,0.193704571,0.178397855,0.162309294,0.146529055,0.146221407,0.140828382,0.135992982,0.130224599,0.129933389,0.12837038,0.123653975,0.122626673,0.118250861,0.116892917,0.11615116,0.111850475,0.109077026,0.107670025,0.100045595,0.099242141,0.094116884,0.092019949,0.091606639,0.090036755,0.08891265,0.08782821,0.085423264,0.085414474,0.085059806,0.084893378,0.084869103,0.084143718,0.082736124,0.081867767];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*120})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.493987,31.233805),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(135,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("豫园", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        map.addOverlay(label);
+
+
+    }
+    function map29(){
+        var map = new BMap.Map("allmap29");
+        var cpoint = new BMap.Point(121.5, 31.2);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.241026,31.242542,31.234366,31.24115,31.231776,31.237625,31.230508,31.288975,31.16976,31.364179,31.371082,31.281251,31.04400487,31.251571,31.29332,31.157925,31.256222,31.303864];
+        var lat=[121.319127,121.355194,121.430522,121.335138,121.394894,121.367275,121.423568,121.150348,121.364412,121.355837,121.492828,121.48249,121.4127881,121.476368,121.416548,121.443197,121.421793,121.413694];
+        var c=[0.288617259,0.190611143,0.158160916,0.153235115,0.137069273,0.118168018,0.08798463,0.068748897,0.058347047,0.050124054,0.046755161,0.045738283,0.043958655,0.042171346,0.041316175,0.041007762,0.040629325,0.040133624];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*120})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.387112,31.238112),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(149,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("真北路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        map.addOverlay(label);
+
+
+    }
+    function map30(){
+        var map = new BMap.Map("allmap30");
+        var cpoint = new BMap.Point(121.43, 31.16);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.204574,31.213524,31.292593,31.222729,31.215,31.011227,31.331838,31.066987,31.007379,31.089321,31.2853,31.232711,31.168237,31.018222,31.121008,31.293554,31.194004,31.305002,31.24162,31.2385537,31.182781,31.279934,31.154527,31.209588,31.233884,31.0107213,31.39225,31.25876,31.182781,31.00356,31.250837,31.026424,31.190815,31.250055,31.045067,31.098205,31.306604];
+        var lat=[121.446457,121.449141,121.45024,121.473292,121.458266,121.410166,121.226061,121.401878,121.395255,121.390356,121.562,121.475755,121.434977,121.41986,121.393101,121.200384,121.463316,121.531974,121.458321,121.4688241,121.437277,121.452017,121.430133,121.417066,121.442527,121.4082187,121.42466,121.45922,121.437277,121.380805,121.407194,121.416578,121.45487,121.498047,121.410088,121.385783,121.448642];
+        var c=[0.249639,0.206464,0.19268,0.183523,0.181863,0.18174,0.176374,0.175476,0.154889,0.154514,0.15311,0.152159,0.151515,0.147613,0.147264,0.146853,0.142857,0.142857,0.141509,0.14006,0.13895,0.135889,0.129669,0.129482,0.129159,0.128159,0.124077,0.12274,0.121869,0.117108,0.116279,0.114859,0.114783,0.114087,0.111111,0.108225,0.106511,0.105691,0.104801];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*80})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.409221,31.136683),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(145,-144)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("莲花路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        map.addOverlay(label);
+
+
+    }
+
+    function map31(){
+        var map = new BMap.Map("allmap31");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.33113,31.209547,31.23941,31.345188,31.216465,31.287782,31.202264,31.328588,31.104467,31.169461,31.177068,31.321777,31.20952,31.289303,31.178513,31.165853,31.395315,31.196593,31.282182,31.011227,31.182781];
+        var lat=[121.441538,121.550867,121.417883,121.245421,121.475295,121.163264,121.435256,121.506766,121.229721,121.444389,121.370378,121.506815,121.477256,121.510039,121.494612,121.355163,121.479583,121.41173,121.50631,121.410166,121.437277];
+        var c=[234,220,220,162,140,122,114,96,88,79,72,70,68,66,64,62,62,58,58,56,51];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*23})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.490778,31.257681),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(149,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("四川北路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        map.addOverlay(label);
+
+
+    }
+    function map32(){
+        var map = new BMap.Map("allmap32");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.328588,31.33113,31.209547,31.23941,31.104467,31.169461,31.121008,31.282182,31.345188,31.182781,31.287782,31.289303,31.011227,31.33205,31.196593,31.198834,31.288592,31.322757,31.321777,31.176736,31.395315,31.177068,31.217373,31.188286,31.178513,31.199425,31.20183,31.2081,31.209588,31.138561,31.098205,31.00356,31.001529,31.2385537,31.24651,31.194004,31.165853,31.371082,31.302861,31.194331,31.118319,31.216465,31.223204,31.305002,31.192655,31.263523,31.259783,31.20952];
+        var lat=[121.506766,121.441538,121.550867,121.417883,121.229721,121.444389,121.393101,121.50631,121.245421,121.437277,121.163264,121.510039,121.410166,121.491556,121.41173,121.404069,121.53494,121.531934,121.506815,121.438365,121.479583,121.370378,121.5454612,121.299327,121.494612,121.392076,121.587671,121.44435,121.417066,121.320199,121.385783,121.380805,121.229351,121.4688241,121.430002,121.463316,121.355163,121.492828,121.514218,121.379917,121.26045,121.475295,121.446455,121.531974,121.722817,121.468783,121.480245,121.477256];
+        var c=[743,483,408,392,284,217,216,205,190,190,182,176,150,149,146,143,133,128,124,112,111,100,96,94,85,78,77,76,75,72,67,66,66,65,65,65,64,64,62,55,55,53,53,53,52,52,50,50];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":15});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*15})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.521292,31.303757),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(135,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("五角场", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        map.addOverlay(label);
+
+
+    }
+    function map33(){
+        var map = new BMap.Map("allmap33");
+        var cpoint = new BMap.Point(121.43, 31.24);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.33113,31.23941,31.282182,31.395315,31.182781,31.209547,31.20952,31.321777,31.169461,31.165853,31.216465,31.202264,31.177068,31.001529,31.194331,31.196593,31.011227,31.252076,31.2081,31.371082,31.188286,31.178513,31.197448,31.289303,31.328588,31.274879,31.121008,31.24651,31.2385537,31.199425,31.287782,31.243908,31.192655,31.251571,31.26902,31.20183,31.209588];
+        var lat=[121.441538,121.417883,121.50631,121.479583,121.437277,121.550867,121.477256,121.506815,121.444389,121.355163,121.475295,121.435256,121.370378,121.229351,121.379917,121.41173,121.410166,121.484352,121.44435,121.492828,121.299327,121.494612,121.420773,121.510039,121.506766,121.501481,121.393101,121.430002,121.4688241,121.392076,121.163264,121.482449,121.722817,121.476368,121.389969,121.587671,121.417066];
+        var c=[528,476,424,352,274,273,259,183,183,180,176,172,161,161,150,146,138,136,132,131,130,127,123,122,122,118,115,114,112,111,111,106,106,105,104,104,100];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*20})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.493987,31.233805),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(135,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("豫园", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        map.addOverlay(label);
+
+
+    }
+    function map34(){
+        var map = new BMap.Map("allmap34");
+        var cpoint = new BMap.Point(121.5, 31.2);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[30.907268,31.194004,31.054906,31.27652,31.121008,31.241026,31.237625,31.371082,31.2385537,31.07763,31.240013,31.188286,31.296843,31.25876,31.21105,31.279934];
+        var lat=[121.929559,121.463316,121.617434,121.49071,121.393101,121.319127,121.367275,121.492828,121.4688241,121.611235,121.519379,121.299327,121.323269,121.45922,121.621096,121.452017];
+        var c=[298,286,154,110,109,108,100,84,80,55,53,50,48,48,46,40];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*25})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.387112,31.238112),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(149,-100)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("真北路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        map.addOverlay(label);
+
+
+    }
+    function map35(){
+        var map = new BMap.Map("allmap35");
+        var cpoint = new BMap.Point(121.43, 31.16);
+        // var cpoint = new BMap.Point(116.418261, 39.921984);
+
+        map.centerAndZoom(cpoint, 10);
+        map.enableScrollWheelZoom(true);
+
+        function addMarker(point){
+            var marker = new BMap.Marker(point);
+            map.addOverlay(marker);
+        }
+
+        var log=[31.182781,31.21105,31.33113,31.25876,31.121008,31.2385537,31.380984,31.215,31.160088,31.371082,31.23941,31.318958,31.188286,31.279934,31.233317,31.395315,31.24162,31.169461,31.154527,31.213858,31.257181,31.168356,31.306604,31.353015,31.001529,31.209547,31.209588,31.194004,31.24969,31.292593,31.1871549,31.19395,31.23585,31.176736,31.245394,31.240013,31.26902,31.216603,31.27652,31.33205,31.141964,31.026424,31.14987,31.222367,31.335441,31.204574,31.222729,31.339881,31.213344,31.007379,31.089321,31.24651,31.321436,31.143227,31.054089,31.220518,31.153366,31.20183,31.290668,31.174761];
+        var lat=[121.437277,121.621096,121.441538,121.45922,121.393101,121.4688241,121.428045,121.458266,121.515679,121.492828,121.417883,121.447096,121.299327,121.452017,121.515413,121.479583,121.458321,121.444389,121.430133,121.673735,121.5819,121.797051,121.448642,121.57484,121.229351,121.550867,121.417066,121.463316,121.458216,121.45024,121.6995211,121.32155,121.543525,121.438365,121.564231,121.519379,121.389969,121.374201,121.49071,121.491556,121.413958,121.416578,121.514515,121.532052,121.593981,121.446457,121.473292,121.437707,121.656565,121.395255,121.390356,121.430002,121.398724,121.511519,121.232617,121.430671,121.480304,121.587671,121.588847,121.418069];
+        var c=[1888,1620,1412,1083,1041,894,651,522,365,364,332,330,321,320,307,296,276,274,265,260,243,225,220,214,212,204,199,190,188,188,182,174,174,170,164,161,152,151,150,148,137,136,134,133,132,128,126,123,122,122,122,121,118,117,113,112,112,111,109,103];
+
+        var tpoint=[];
+
+        heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
+        map.addOverlay(heatmapOverlay);
+        for(let i=0; i < lat.length; i++) {
+            tpoint.push({"lng":lat[i],"lat":log[i],"count":Math.sqrt(Math.sqrt(c[i]))*15})
+        }
+        heatmapOverlay.setDataSet({data:tpoint,max:100});
+
+        heatmapOverlay.show();
+
+
+        map.addOverlay(new BMap.Circle(new BMap.Point(121.409221,31.136683),1000,{fillColor:"black",fillColorOpacity:"0.4",strokeColor:"black", strokeWeight:2, strokeOpacity:0.01}));
+
+        var opts = {
+            position : cpoint,    // 指定文本标注所在的地理位置
+            offset   : new BMap.Size(145,-144)    //设置文本偏移量
+        };
+
+        var label = new BMap.Label("莲花路", opts);  // 创建文本标注对象
+        label.setStyle({
+            color : "red",
+            fontSize : "12px",
+            height : "20px",
+            lineHeight : "20px",
+            fontFamily:"微软雅黑"
+        });
+        map.addOverlay(label);
+
+
+    }
+
+</script>
